@@ -1,25 +1,8 @@
-import './App.css';
-
-import { gql, useQuery } from '@apollo/client'
-
-const Query = gql`
- query{
-  authors{
-    name
-  }
- }
-`
+import Layout from "./components/layout/Layout";
 
 function App() {
 
-  const {data} = useQuery(Query)
-  console.log(data)
-
-  return (
-    <div className="App">
-      
-    </div>
-  );
+  return <Layout/>
 }
 
 export default App;

@@ -5,7 +5,7 @@ import App from "./App";
 import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
 
 const client = new ApolloClient({
-  uri: process.env.REACT_APP_GRAPHCMS_URL,
+  uri: process.env.REACT_APP_GRAPHCMS_URI,
   cache: new InMemoryCache(),
 });
 

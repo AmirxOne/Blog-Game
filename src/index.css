@@ -6,3 +6,11 @@ body{
     background-color:#0A1929 ;
     /* color: white; */
 }
+body::-webkit-scrollbar{
+    width: 5px;
+    height: 0;
+}
+body::-webkit-scrollbar-thumb{
+    background-color: rgb(19, 47, 76);
+    border-radius: 25px;
+}

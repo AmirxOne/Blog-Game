@@ -11,7 +11,7 @@ const Home = () => {
     <Container maxWidth="lg">
       <Grid container spacing={2}>
         <Grid item xs={12} md={3} mt={4}>
-          <Typography component="h1" variant="h5">
+          <Typography component="h1" variant="h5" sx={{color:"white"}}>
             programers
           </Typography>
           <Programers />

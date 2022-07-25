@@ -4,6 +4,7 @@ import { Container, Grid, Typography } from "@mui/material";
 // Components
 import Programers from "../components/Programers";
 import Blogs from "../components/Blogs";
+// react router dom
 
 const Home = () => {
   return (
@@ -17,7 +18,7 @@ const Home = () => {
         </Grid>
 
         <Grid item xs={12} md={9} mt={4}>
-          <Typography component="h1" variant="h5">
+          <Typography component="h1" variant="h5" sx={{color:"white"}}>
             Blogs
           </Typography>
           <Blogs />

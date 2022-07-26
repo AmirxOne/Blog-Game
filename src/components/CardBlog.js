@@ -12,7 +12,7 @@ import {
   Button,
 } from "@mui/material";
 //react router dom
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const CardBlog = ({ title, slug, coverPhoto, author }) => {
   return (
@@ -49,14 +49,9 @@ const CardBlog = ({ title, slug, coverPhoto, author }) => {
       </CardContent>
       <Divider variant="middle" />
       <CardActions>
-        {/* <Link to={`/blogs/${slug}` sx={{textDecoration:"none", width="100%"}}}> */}
-        <Button
-          variant="outlined"
-          sx={{ width: "100%", borderRadius: "10px", marginBottom: "5px" }}
-        >
-          Detils Blog
-        </Button>
-        {/* </Link> */}
+        <Link to={`/blogs/${slug}`} style={{textDecoration:"none", width:"100%"}}>
+            <Button variant="outlined" sx={{ width: "100%", borderRadius: "10px", marginBottom: "5px" }}> Detils Blog </Button>
+        </Link>
       </CardActions>
     </Card>
   );

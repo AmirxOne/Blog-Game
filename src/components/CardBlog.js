@@ -23,14 +23,15 @@ const CardBlog = ({ title, slug, coverPhoto, author }) => {
         borderRadius: "15px",
       }}
     >
-      <CardHeader
+      {author && <CardHeader
         avatar={<Avatar src={author.avatar.url} sx={{ marginRight: "-5px" }} />}
         title={
           <Typography component="p" sx={{ fontSize: "14px", color: "#6F7E8C" }}>
             {author.name}
           </Typography>
         }
-      />
+      /> }
+      
       <CardMedia
         component="img"
         height="276px"

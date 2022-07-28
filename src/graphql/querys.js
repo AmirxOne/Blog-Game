@@ -20,7 +20,7 @@ const GET_BLOGS_INFO = gql`
 `;
 
 const GET_AUTHORS_INFO = gql`
-  {
+  query {
     authors {
       id
       name
@@ -32,4 +32,29 @@ const GET_AUTHORS_INFO = gql`
   }
 `;
 
-export { GET_BLOGS_INFO, GET_AUTHORS_INFO };
+const GET_AUTHOR_INFO = gql`
+  query getauthorinfo($slug: String!) {
+    author(where: { slug: $slug }) {
+      avatar {
+        url
+      }
+      field
+      name
+      id
+      description {
+        html
+      }
+      post {
+        ... on Post {
+          title
+          slug
+          coverPhoto {
+            url
+          }
+        }
+      }
+    }
+  }
+`;
+
+export { GET_BLOGS_INFO, GET_AUTHORS_INFO, GET_AUTHOR_INFO };

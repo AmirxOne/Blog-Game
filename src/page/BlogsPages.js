@@ -9,8 +9,9 @@ import { Avatar, Box, Container, Grid, Typography } from "@mui/material";
 import KeyboardDoubleArrowLeftRoundedIcon from "@mui/icons-material/KeyboardDoubleArrowLeftRounded";
 // Sanitize
 import sanitize from "sanitize-html";
-// component
+// components
 import ComentForm from "../components/ComentForm";
+import Comments from "../components/Comments";
 
 const BlogsPages = () => {
   const { slug } = useParams();
@@ -109,7 +110,10 @@ const BlogsPages = () => {
           ></div>
         </Grid>
         <Grid item xs={12} mt={8}>
-          <ComentForm />
+          <ComentForm slug={slug} />
+        </Grid>
+        <Grid item xs={12} mt={8}>
+          <Comments slug={slug} />
         </Grid>
       </Grid>
     </Container>

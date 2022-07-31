@@ -12,6 +12,7 @@ import sanitize from "sanitize-html";
 // components
 import ComentForm from "../components/ComentForm";
 import Comments from "../components/Comments";
+import Loading from "../components/Loading";
 
 const BlogsPages = () => {
   const { slug } = useParams();
@@ -21,7 +22,7 @@ const BlogsPages = () => {
   const navigate = useNavigate();
   console.log(data);
 
-  if (loading) return <h1>Loading...</h1>;
+  if (loading) return <Loading/>;
   if (error) return <h1>Error...</h1>;
   const {
     post: { title, author, content, coverPhoto },

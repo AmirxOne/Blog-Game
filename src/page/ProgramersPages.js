@@ -10,6 +10,7 @@ import { Avatar, Container, Grid, Typography } from "@mui/material";
 import sanitizeHtml from "sanitize-html";
 // Components
 import CardBlog from "../components/CardBlog";
+import Loading from "../components/Loading";
 
 const ProgramersPages = () => {
   const { slug } = useParams();
@@ -18,7 +19,7 @@ const ProgramersPages = () => {
     variables: { slug },
   });
 
-  if (loading) return <h1>Loading...</h1>;
+  if (loading) return <Loading/>;
   if (error) return <h1>Error...</h1>;
 
   const {

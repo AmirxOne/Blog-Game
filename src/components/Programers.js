@@ -6,13 +6,14 @@ import { useQuery } from "@apollo/client";
 import { Avatar, Grid, Typography } from "@mui/material";
 // react router dom
 import { Link } from "react-router-dom";
+import Loading from "./Loading";
 
 
 const Programers = () => {
 
   const { loading, data, error } = useQuery(GET_AUTHORS_INFO);
 
-  if (loading) return <h1>Loading...</h1>;
+  if (loading) return <Loading/>;
 
   if (error) return <h1>Error...</h1>;
 

@@ -6,12 +6,13 @@ import { GET_BLOGS_INFO } from "../graphql/querys";
 import { Grid } from "@mui/material";
 // Components
 import CardBlog from "./CardBlog";
+import Loading from "./Loading";
 
 const Blogs = () => {
   const { loading, data, error } = useQuery(GET_BLOGS_INFO);
   console.log(data);
 
-  if (loading) return <h1>Loading...</h1>;
+  if (loading) return <Loading/>;
   if (error) return <h1>Error...</h1>;
   return (
     <Grid container spacing={2} sx={{marginTop:"20px"}}>

@@ -1,12 +1,16 @@
 import React from "react";
-//gql
+// gql
 import { useQuery } from "@apollo/client";
 import { GET_POST_INFO } from "../graphql/querys";
 // react router dom
 import { useParams, useNavigate } from "react-router-dom";
-//MUI
+// MUI
 import { Avatar, Box, Container, Grid, Typography } from "@mui/material";
 import KeyboardDoubleArrowLeftRoundedIcon from "@mui/icons-material/KeyboardDoubleArrowLeftRounded";
+// Sanitize
+import sanitize from "sanitize-html";
+// component
+import ComentForm from "../components/ComentForm";
 
 const BlogsPages = () => {
   const { slug } = useParams();
@@ -34,7 +38,12 @@ const BlogsPages = () => {
             justifyContent: "space-between",
           }}
         >
-          <Typography component="h3" variant="h4" fontWeight={700}>
+          <Typography
+            component="h3"
+            variant="h5"
+            fontWeight={700}
+            fontSize={28}
+          >
             {title}
           </Typography>
           <KeyboardDoubleArrowLeftRoundedIcon
@@ -53,7 +62,7 @@ const BlogsPages = () => {
           }}
         >
           <img
-            width={800}
+            width="80%"
             style={{ borderRadius: "15px" }}
             src={coverPhoto.url}
             alt={slug}
@@ -94,7 +103,13 @@ const BlogsPages = () => {
             justifyContent: "center",
           }}
         >
-          
+          <div
+            style={{ fontFamily: "Roboto", lineHeight: "2", fontSize: "18px" }}
+            dangerouslySetInnerHTML={{ __html: sanitize(content.html) }}
+          ></div>
+        </Grid>
+        <Grid item xs={12} mt={8}>
+          <ComentForm />
         </Grid>
       </Grid>
     </Container>

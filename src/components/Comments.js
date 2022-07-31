@@ -11,14 +11,17 @@ const Comments = ({ slug }) => {
     variables: { slug },
   });
 
-  if (loading) return <Loading/>;
+  if (loading) return <Loading />;
   if (error) return <h>Error...</h>;
 
   return (
     <Container maxWidth="lg">
-      <Typography component="h3" variant="h5" fontWeight={700}>
-        Comments
-      </Typography>
+      {data.comments.length > 0 && (
+        <Typography component="h3" variant="h5" fontWeight={700}>
+          Comments
+        </Typography>
+      )}
+
       <Grid container sx={{ marginTop: "25px" }}>
         {data.comments.map((comment) => (
           <Grid
@@ -32,15 +35,20 @@ const Comments = ({ slug }) => {
               backgroundColor: "rgb(0, 30, 60)",
               border: "1px solid #5468ff",
               borderRadius: "15px",
-              padding: '10px 20px',
+              padding: "10px 20px",
             }}
           >
-            <Avatar />
+            <Avatar>{comment.name[0]}</Avatar>
             <Box component="span" sx={{ p: 2 }}>
               <Typography sx={{ fontSize: "18px" }} component="h3" variant="h5">
                 {comment.name}
               </Typography>
-              <Typography sx={{ fontSize: "16px", marginTop:'10px' }} fontWeight={200} component="h3" variant="h5">
+              <Typography
+                sx={{ fontSize: "16px", marginTop: "10px" }}
+                fontWeight={200}
+                component="h3"
+                variant="h5"
+              >
                 {comment.text}
               </Typography>
             </Box>

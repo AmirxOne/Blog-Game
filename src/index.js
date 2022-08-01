@@ -8,7 +8,8 @@ import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
 import { BrowserRouter } from "react-router-dom";
 
 const client = new ApolloClient({
-  uri: process.env.REACT_APP_GRAPHCMS_URI,
+  // uri: process.env.REACT_APP_GRAPHCMS_URI,
+  uri: 'https://api-eu-central-1.hygraph.com/v2/cl5tbnqen24dn01uk413a07rd/master',
   cache: new InMemoryCache(),
 });
 
